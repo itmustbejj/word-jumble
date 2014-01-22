@@ -1,4 +1,4 @@
-word-jubmle
+word-jumble
 ===========
 
 Word Jumble
