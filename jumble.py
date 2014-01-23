@@ -7,6 +7,7 @@ def load_word_dict():
     """Load the word list files into a master word list for validation."""
 
     word_dict = {}
+    
     # Load the word list from the word files. This word list is pretty verbose
     # and includes a lot of acronyms, so don't dock me when weird permutations
     # show up :)
@@ -21,6 +22,7 @@ def load_word_dict():
                     word_dict[line[0]].append(line)
                 else:
                     word_dict[line[0]] = [line,]
+                    
     return word_dict
 
 
@@ -43,10 +45,12 @@ def filter_words(potential_words, word_dict):
     """Validate potential words against our dictionary of words."""
 
     filtered_words = []
+    
     for word in potential_words:
         # If the word is in our word list and not a duplicate, add it.
         if word in word_dict.get(word[0]) and word not in filtered_words:
             filtered_words.append(word)
+            
     return filtered_words
 
 
